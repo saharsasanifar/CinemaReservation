@@ -14,7 +14,7 @@ class Reservation:
     def reserve(self):
         if CinemaHall.use_seats:
             if CinemaHall.flag == True:
-                self.movie_reserved[self.movie_id] = {self.reservation_id, self.showtime, self.seat_number,self.user_name}
+                self.movie_reserved[self.movie_id] = [self.reservation_id, self.showtime, self.seat_number,self.user_name]
             else:
                 print("sorry we dont have enough seats!")
         else:
