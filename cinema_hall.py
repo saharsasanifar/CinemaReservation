@@ -2,7 +2,8 @@ class CinemaHall :
     def __init__(self, name, total_seats, movies_showing) :
         self.name = name 
         self.total_seats = total_seats
-        self.movies_showing = movies_showing
+        self.movies_showing = []
+        self.employees = []
         self.flag = False
     def __str__(self):
         return f"the cinema {self.name} with total seats {self.total_seats} shoe this movies : {self.movies_showing}"

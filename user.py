@@ -23,7 +23,6 @@ class User(Person):
                 show_time = input("enter the show time you want :")
                 re = Reservation(name.imdbid, show time, seat_number,self.name)
                 re.Reservation.reserve()
-
             else:
                 print("movie dosent exsist")
     
