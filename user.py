@@ -1,4 +1,6 @@
 from person import *
+from movie import *
+from reservation import*
 
 class User(Person):
     last_id = 100
@@ -14,9 +16,16 @@ class User(Person):
     def show_info(self):
         print(f"User\n{self.name}'s Contact Info:\n Email--> {self.email},\n Phone--> {self.phone}")
 
-    def add_reservation(self, reservation):
-        pass
-        #self.reservations.append(reservation)
+    def add_reservation(self, movie_name):
+        for name in Movie.movies_inf:
+            if name.title == movie_name :
+                seat_number = input("enter the seats you want :")
+                show_time = input("enter the show time you want :")
+                re = Reservation(name.imdbid, show time, seat_number,self.name)
+                re.Reservation.reserve()
+
+            else:
+                print("movie dosent exsist")
     
     def remove_reservation(self, reservation):
         pass

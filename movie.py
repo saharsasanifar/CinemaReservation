@@ -8,6 +8,8 @@ class Movie :
         self.relesed= relesed
         self.status = status
         self.feedback_list = []
+        self.movies_inf = MovieFetcher.fetch_movies()
+
 
     def __str__(self):
         return f"movie with id number {self.id_} and title {self.title} rates : {self.rating} shows at {self.relesed}"
