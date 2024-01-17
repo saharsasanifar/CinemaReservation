@@ -1,5 +1,11 @@
+from employee import *
+from movie import *
+
+
 class CinemaHall :
-    def __init__(self, name, total_seats, movies_showing) :
+    employees = []
+    all_movies = []
+    def __init__(self, name, total_seats, movies_showing):
         self.name = name 
         self.total_seats = total_seats
         self.movies_showing = []
@@ -16,7 +22,22 @@ class CinemaHall :
         else :
             print(f"we dont have enough seats,the number of seats is {self.total_seats}")
             self.flag = False
+
+    @staticmethod
+    def add_employee(employee):
+        if employee not in CinemaHall.employees:
+            employee = {"employee.id" : employee.employee_id, "positoin" : employee.position, "name" : employee.name}
+            CinemaHall.employees.append(employee)
+        else:
+            print("This employee is already added to the list.")
             
-    def show_employee(self):
-        for employee in Employee.employees.values() :
-            print (f"employee {employee.id} with positoin {employee,positoin}") 
+    #def show_employee(self):
+    #    for employee in Employee.employees.values() :
+    #        print (f"employee {employee.id} with positoin {employee.positoin}") 
+    '''        
+    def add_movie(movie_name):
+        if movie_name not in CinemaHall.all_movies:
+            movie_name = {"name" : movie_name}
+            CinemaHall.all_movies.append(movie_name)
+        else:
+            print("This movie is already added to the list.")'''
