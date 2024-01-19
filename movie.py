@@ -28,10 +28,11 @@ class MovieFetcher :
         if response.status_code == 200:
             movies = response.json().get("results")
         else:
-            movies= []
-        movies = []
+            print("Failed to fetch data from API!")
+        
+        movies_list = []
         for mov in movies :
-            movie =Movie(
+            movie = Movie(
                 mov.get('imdbid','No Id'),
                 mov.get('title', 'No Title'),
                 mov.get('genre', 'No genere'),
@@ -39,7 +40,7 @@ class MovieFetcher :
                 mov.get('released','No time released'),
                 mov.get('synopsis', 'No Discription')
             )
-            movies.append(mov)
+            movies_list.append(mov)
         return movies
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ class User(Person):
         super().__init__(name, age, email, phone)
         self.user_id = "user" + str(User.last_id)
         User.last_id += 1
-        reservations = []
+        self.reservations = []
 
     def __str__(self):
         return f"{self.user_id}==> {super().__str__()}"
@@ -21,15 +21,18 @@ class User(Person):
             if name.title == movie_name :
                 seat_number = input("enter the seats you want :")
                 show_time = input("enter the show time you want :")
-                re = Reservation(name.imdbid, show time, seat_number,self.name)
+                re = Reservation(name.imdbid, show_time, seat_number,self.name)
                 re.Reservation.reserve()
+                self.reservations.append(re.reservation_id)
             else:
                 print("movie dosent exsist")
     
-    def remove_reservation(self, reservation):
-        pass
-        #self.reservations.remove(reservation)
-    
+    def remove_reservation(self, res_id):
+        if res_id in self.reservations:
+            self.reservations.remove(res_id)
+            print("reservation removed")
+        else:
+            print("reservation dosent exsist")
 
 if __name__ == "__main__":
     user = User("John", 25, "johndoe@me.com", "555-555-5555")
