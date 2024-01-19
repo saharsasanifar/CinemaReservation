@@ -5,14 +5,14 @@ from movie import *
 class CinemaHall :
     employees = []
     all_movies = []
-    def __init__(self, name, total_seats, movies_showing):
+    movies_showing = []
+    def __init__(self, name, total_seats):
         self.name = name 
         self.total_seats = total_seats
-        self.movies_showing = []
         self.employees = []
         self.flag = False
     def __str__(self):
-        return f"the cinema {self.name} with total seats {self.total_seats} shoe this movies : {self.movies_showing}"
+        return f"the cinema {self.name} with total seats {self.total_seats} shoe this movies : {CinemaHall.movies_showing}"
 
     def use_seats(self,num_seats):
         if self.total_seats >= num_seats :
